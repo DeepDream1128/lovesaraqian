@@ -49,7 +49,7 @@ function App() {
              <p className="text-yellow-100/90 tracking-[0.2em] text-sm md:text-lg mt-4 md:mt-6 font-serif-display italic border-t border-yellow-500/40 pt-3 md:pt-4 pl-1">
                I love you my dear
              </p>
-             <p className="text-yellow-100/80 tracking-[0.1em] text-xs md:text-base mt-2 font-serif-display pl-1">
+             <p className="text-yellow-100/80 tracking-[0.1em] text-sm md:text-xl mt-2 font-serif-display pl-1 drop-shadow-md">
                佳佳小公主小狗猫宝宝
              </p>
           </header>
