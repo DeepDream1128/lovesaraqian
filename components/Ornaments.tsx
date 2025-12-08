@@ -34,7 +34,8 @@ const OrnamentLayer: React.FC<{
   }, [items]);
 
   useFrame((state) => {
-    if (!meshRef.current) return;
+    const mesh = meshRef.current;
+    if (!mesh) return;
     
     const time = state.clock.getElapsedTime();
     const isFormingTree = progress > 0.5;
@@ -88,13 +89,13 @@ const OrnamentLayer: React.FC<{
       tempObject.scale.setScalar(item.scale);
       tempObject.updateMatrix();
       
-      meshRef.current.setMatrixAt(i, tempObject.matrix);
+      mesh.setMatrixAt(i, tempObject.matrix);
       // Set Color for instanced mesh
-      meshRef.current.setColorAt(i, new THREE.Color(item.color));
+      mesh.setColorAt(i, new THREE.Color(item.color));
     });
     
-    meshRef.current.instanceMatrix.needsUpdate = true;
-    if (meshRef.current.instanceColor) meshRef.current.instanceColor.needsUpdate = true;
+    mesh.instanceMatrix.needsUpdate = true;
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
   });
 
   return (

@@ -78,13 +78,12 @@ const Experience: React.FC<ExperienceProps> = ({ treeState }) => {
       <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
       {/* Post Processing for Luxury Feel */}
-      <EffectComposer disableNormalPass>
+      <EffectComposer enableNormalPass={false}>
         <Bloom 
           luminanceThreshold={0.8} 
-          mipWow={0} 
+          luminanceSmoothing={0.1}
           intensity={1.5} 
-          radius={0.4} 
-          levels={9}
+          mipmapBlur
         />
         <Vignette eskil={false} offset={0.1} darkness={0.6} />
         <Noise opacity={0.02} /> 
